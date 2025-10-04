@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.quizzapp.controller.GameController">
+   <top>
+      <VBox alignment="CENTER" spacing="10.0">
+         <children>
+            <Label fx:id="titleLabel" styleClass="title-label" text="Quiz Game" />
+            <Label fx:id="scoreLabel" styleClass="score-label" text="Score: 0" />
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </VBox>
+   </top>
+   <center>
+      <VBox alignment="CENTER" spacing="20.0">
+         <children>
+            <!-- Name Input Section -->
+            <VBox fx:id="nameInputSection" alignment="CENTER" spacing="15.0">
+               <children>
+                  <Label styleClass="section-label" text="Enter Your Name" />
+                  <TextField fx:id="playerNameField" maxWidth="300.0" promptText="Your name..." />
+                  <Button fx:id="startGameButton" mnemonicParsing="false" onAction="#handleStartGame" styleClass="primary-button" text="Start Game" />
+               </children>
+            </VBox>
+            
+            <!-- Game Section -->
+            <VBox fx:id="gameSection" alignment="CENTER" spacing="20.0">
+               <children>
+                  <Label fx:id="questionNumberLabel" styleClass="question-number-label" text="Question 1 of 5" />
+                  
+                  <!-- Timer Section -->
+                  <VBox alignment="CENTER" spacing="5.0">
+                     <children>
+                        <ProgressBar fx:id="timerProgressBar" prefWidth="300.0" progress="1.0" />
+                        <Label fx:id="timerLabel" styleClass="timer-label" text="Time: 30 seconds" />
+                     </children>
+                  </VBox>
+                  
+                  <!-- Question Section -->
+                  <VBox alignment="CENTER" spacing="15.0">
+                     <children>
+                        <Label fx:id="questionTitleLabel" styleClass="question-title-label" text="Question text will appear here" wrapText="true" />
+                        <VBox fx:id="questionContainer" alignment="CENTER_LEFT" spacing="10.0" />
+                        <Button fx:id="submitAnswerButton" mnemonicParsing="false" onAction="#handleSubmitAnswer" styleClass="primary-button" text="Submit Answer" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </padding>
+      </VBox>
+   </center>
+</BorderPane>
