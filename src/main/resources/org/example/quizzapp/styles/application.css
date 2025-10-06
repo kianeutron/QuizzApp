@@ -1,0 +1,204 @@
+/* Quiz Application Styles */
+
+/* Root styling */
+.root {
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+    -fx-background-color: #f5f5f5;
+}
+
+/* Title labels */
+.title-label {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 10px;
+}
+
+/* Section labels */
+.section-label {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #34495e;
+    -fx-padding: 5px;
+}
+
+/* Description labels */
+.description-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #7f8c8d;
+    -fx-padding: 5px;
+}
+
+/* Info labels */
+.info-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #95a5a6;
+    -fx-padding: 5px;
+}
+
+/* Score label */
+.score-label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #27ae60;
+    -fx-padding: 5px;
+}
+
+/* Question number label */
+.question-number-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #8e44ad;
+    -fx-padding: 5px;
+}
+
+/* Question title label */
+.question-title-label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 10px;
+    -fx-text-alignment: center;
+}
+
+/* Timer label */
+.timer-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #e74c3c;
+    -fx-font-weight: bold;
+}
+
+/* Completion message label */
+.completion-message-label {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #27ae60;
+    -fx-padding: 10px;
+    -fx-text-alignment: center;
+}
+
+/* Player score label */
+.player-score-label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3498db;
+    -fx-padding: 5px;
+}
+
+/* Primary buttons */
+.primary-button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 2, 0, 0, 1);
+}
+
+.primary-button:hover {
+    -fx-background-color: #2980b9;
+}
+
+.primary-button:pressed {
+    -fx-background-color: #21618c;
+}
+
+.primary-button:disabled {
+    -fx-background-color: #bdc3c7;
+    -fx-text-fill: #7f8c8d;
+    -fx-cursor: default;
+}
+
+/* Secondary buttons */
+.secondary-button {
+    -fx-background-color: #95a5a6;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 2, 0, 0, 1);
+}
+
+.secondary-button:hover {
+    -fx-background-color: #7f8c8d;
+}
+
+.secondary-button:pressed {
+    -fx-background-color: #6c7b7d;
+}
+
+/* Text fields */
+.text-field {
+    -fx-font-size: 14px;
+    -fx-padding: 8px;
+    -fx-background-radius: 3px;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 3px;
+}
+
+.text-field:focused {
+    -fx-border-color: #3498db;
+    -fx-border-width: 2px;
+}
+
+/* Radio buttons */
+.radio-button {
+    -fx-font-size: 14px;
+    -fx-padding: 5px;
+}
+
+.radio-button:selected .radio {
+    -fx-background-color: #3498db;
+}
+
+/* Progress bar */
+.progress-bar {
+    -fx-accent: #e74c3c;
+}
+
+.progress-bar > .track {
+    -fx-background-color: #ecf0f1;
+    -fx-background-radius: 2px;
+}
+
+.progress-bar > .bar {
+    -fx-background-color: #e74c3c;
+    -fx-background-radius: 2px;
+}
+
+/* Table view */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 5px;
+}
+
+.table-view .column-header {
+    -fx-background-color: #34495e;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.table-view .table-cell {
+    -fx-padding: 8px;
+    -fx-border-color: #ecf0f1;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+/* VBox and HBox spacing */
+.vbox, .hbox {
+    -fx-spacing: 10px;
+}
+
+/* Alert dialogs */
+.alert {
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+}
