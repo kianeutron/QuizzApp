@@ -1,0 +1,91 @@
+{
+  "resultCount" : 6,
+  "resultsSortedByScore" : [ {
+    "score" : 100.0,
+    "scoreString" : "3/3 (100.0%)",
+    "playerName" : "kian",
+    "totalQuestions" : 3,
+    "correctQuestions" : 3,
+    "date" : "2025-09-29T15:55:58"
+  }, {
+    "score" : 100.0,
+    "scoreString" : "3/3 (100.0%)",
+    "playerName" : "kian",
+    "totalQuestions" : 3,
+    "correctQuestions" : 3,
+    "date" : "2025-09-25T10:04:19"
+  }, {
+    "score" : 100.0,
+    "scoreString" : "3/3 (100.0%)",
+    "playerName" : "kian",
+    "totalQuestions" : 3,
+    "correctQuestions" : 3,
+    "date" : "2025-09-25T10:02:02"
+  }, {
+    "score" : 66.66666666666666,
+    "scoreString" : "2/3 (66.7%)",
+    "playerName" : "kian",
+    "totalQuestions" : 3,
+    "correctQuestions" : 2,
+    "date" : "2025-10-06T16:45:37"
+  }, {
+    "score" : 33.33333333333333,
+    "scoreString" : "1/3 (33.3%)",
+    "playerName" : "kian",
+    "totalQuestions" : 3,
+    "correctQuestions" : 1,
+    "date" : "2025-10-06T15:29:41"
+  }, {
+    "score" : 33.33333333333333,
+    "scoreString" : "1/3 (33.3%)",
+    "playerName" : "niger boy",
+    "totalQuestions" : 3,
+    "correctQuestions" : 1,
+    "date" : "2025-09-25T10:38:48"
+  } ],
+  "quizId" : "javabasicsquiz",
+  "name" : "Java Basics Quiz",
+  "results" : [ {
+    "score" : 100.0,
+    "scoreString" : "3/3 (100.0%)",
+    "playerName" : "kian",
+    "totalQuestions" : 3,
+    "correctQuestions" : 3,
+    "date" : "2025-09-25T10:02:02"
+  }, {
+    "score" : 100.0,
+    "scoreString" : "3/3 (100.0%)",
+    "playerName" : "kian",
+    "totalQuestions" : 3,
+    "correctQuestions" : 3,
+    "date" : "2025-09-25T10:04:19"
+  }, {
+    "score" : 33.33333333333333,
+    "scoreString" : "1/3 (33.3%)",
+    "playerName" : "niger boy",
+    "totalQuestions" : 3,
+    "correctQuestions" : 1,
+    "date" : "2025-09-25T10:38:48"
+  }, {
+    "score" : 100.0,
+    "scoreString" : "3/3 (100.0%)",
+    "playerName" : "kian",
+    "totalQuestions" : 3,
+    "correctQuestions" : 3,
+    "date" : "2025-09-29T15:55:58"
+  }, {
+    "score" : 33.33333333333333,
+    "scoreString" : "1/3 (33.3%)",
+    "playerName" : "kian",
+    "totalQuestions" : 3,
+    "correctQuestions" : 1,
+    "date" : "2025-10-06T15:29:41"
+  }, {
+    "score" : 66.66666666666666,
+    "scoreString" : "2/3 (66.7%)",
+    "playerName" : "kian",
+    "totalQuestions" : 3,
+    "correctQuestions" : 2,
+    "date" : "2025-10-06T16:45:37"
+  } ]
+}
