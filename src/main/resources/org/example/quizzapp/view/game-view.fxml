@@ -4,56 +4,75 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.quizzapp.controller.GameController">
+<BorderPane prefWidth="900.0" prefHeight="700.0"
+            xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.quizzapp.controller.GameController">
    <top>
-      <VBox alignment="CENTER" spacing="10.0">
+      <HBox alignment="CENTER" spacing="40.0"
+            style="-fx-background-color: rgba(255,255,255,0.15); -fx-padding: 20px;">
          <children>
-            <Label fx:id="titleLabel" styleClass="title-label" text="Quiz Game" />
-            <Label fx:id="scoreLabel" styleClass="score-label" text="Score: 0" />
+            <Label fx:id="titleLabel" styleClass="title-label" text="🎮 Quiz Game"
+                   style="-fx-font-size: 36px;" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Label fx:id="scoreLabel" styleClass="score-label" text="Score: 0"
+                   style="-fx-font-size: 28px; -fx-text-fill: white; -fx-background-color: rgba(39,174,96,0.9); -fx-background-radius: 20px; -fx-padding: 10px 25px;" />
          </children>
-         <padding>
-            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-         </padding>
-      </VBox>
+      </HBox>
    </top>
    <center>
-      <VBox alignment="CENTER" spacing="20.0">
+      <VBox alignment="CENTER" spacing="30.0">
          <children>
             <!-- Name Input Section -->
-            <VBox fx:id="nameInputSection" alignment="CENTER" spacing="15.0">
+            <VBox fx:id="nameInputSection" alignment="CENTER" spacing="25.0"
+                  style="-fx-background-color: rgba(255,255,255,0.95); -fx-background-radius: 25px; -fx-padding: 50px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 20, 0, 0, 8);">
                <children>
-                  <Label styleClass="section-label" text="Enter Your Name" />
-                  <TextField fx:id="playerNameField" maxWidth="300.0" promptText="Your name..." />
-                  <Button fx:id="startGameButton" mnemonicParsing="false" onAction="#handleStartGame" styleClass="primary-button" text="Start Game" />
+                  <Label styleClass="section-label" text="👤 Enter Your Name"
+                         style="-fx-font-size: 32px; -fx-text-fill: #667eea;" />
+                  <TextField fx:id="playerNameField" maxWidth="400.0" promptText="Your name..."
+                             styleClass="text-field" style="-fx-font-size: 20px;" />
+                  <Button fx:id="startGameButton" mnemonicParsing="false" onAction="#handleStartGame"
+                          styleClass="primary-button" text="🚀 Start Game" prefWidth="250.0" />
                </children>
             </VBox>
-            
+
             <!-- Game Section -->
-            <VBox fx:id="gameSection" alignment="CENTER" spacing="20.0">
+            <VBox fx:id="gameSection" alignment="CENTER" spacing="25.0"
+                  style="-fx-background-color: rgba(255,255,255,0.95); -fx-background-radius: 25px; -fx-padding: 40px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 20, 0, 0, 8);">
                <children>
-                  <Label fx:id="questionNumberLabel" styleClass="question-number-label" text="Question 1 of 5" />
-                  
-                  <!-- Timer Section -->
-                  <VBox alignment="CENTER" spacing="5.0">
+                  <!-- Question Number Badge -->
+                  <Label fx:id="questionNumberLabel" styleClass="question-number-label"
+                         text="Question 1 of 5" style="-fx-font-size: 20px;" />
+
+                  <!-- Timer Section with modern design -->
+                  <VBox alignment="CENTER" spacing="10.0"
+                        style="-fx-background-color: rgba(231,76,60,0.1); -fx-background-radius: 15px; -fx-padding: 20px;">
                      <children>
-                        <ProgressBar fx:id="timerProgressBar" prefWidth="300.0" progress="1.0" />
-                        <Label fx:id="timerLabel" styleClass="timer-label" text="Time: 30 seconds" />
+                        <Label styleClass="timer-label" text="⏱️ Time Remaining"
+                               style="-fx-font-size: 18px;" />
+                        <ProgressBar fx:id="timerProgressBar" prefWidth="400.0" prefHeight="15.0" progress="1.0" />
+                        <Label fx:id="timerLabel" styleClass="timer-label" text="30 seconds"
+                               style="-fx-font-size: 24px;" />
                      </children>
                   </VBox>
-                  
-                  <!-- Question Section -->
-                  <VBox alignment="CENTER" spacing="15.0">
+
+                  <!-- Question Section with card design -->
+                  <VBox alignment="CENTER" spacing="25.0" maxWidth="700.0">
                      <children>
-                        <Label fx:id="questionTitleLabel" styleClass="question-title-label" text="Question text will appear here" wrapText="true" />
-                        <VBox fx:id="questionContainer" alignment="CENTER_LEFT" spacing="10.0" />
-                        <Button fx:id="submitAnswerButton" mnemonicParsing="false" onAction="#handleSubmitAnswer" styleClass="primary-button" text="Submit Answer" />
+                        <Label fx:id="questionTitleLabel" styleClass="question-title-label"
+                               text="Question text will appear here" wrapText="true"
+                               style="-fx-font-size: 28px; -fx-padding: 20px; -fx-background-color: rgba(102,126,234,0.1); -fx-background-radius: 15px;" />
+                        <VBox fx:id="questionContainer" alignment="CENTER_LEFT" spacing="15.0"
+                              style="-fx-padding: 10px;" />
+                        <Button fx:id="submitAnswerButton" mnemonicParsing="false" onAction="#handleSubmitAnswer"
+                                styleClass="success-button" text="✓ Submit Answer" prefWidth="300.0"
+                                style="-fx-font-size: 22px;" />
                      </children>
                   </VBox>
                </children>
             </VBox>
          </children>
          <padding>
-            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+            <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
          </padding>
       </VBox>
    </center>
