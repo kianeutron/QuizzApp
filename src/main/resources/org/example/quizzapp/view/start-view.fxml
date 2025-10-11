@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="30.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.quizzapp.controller.StartController">
+   <children>
+      <Label fx:id="titleLabel" styleClass="title-label" text="Quiz Application" />
+      <Label fx:id="descriptionLabel" styleClass="description-label" text="Test your knowledge with interactive quizzes!" />
+      <Button fx:id="startButton" mnemonicParsing="false" onAction="#handleStartButton" styleClass="primary-button" text="Start" />
+   </children>
+   <padding>
+      <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+   </padding>
+</VBox>
