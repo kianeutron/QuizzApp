@@ -1,312 +1,328 @@
 {
-  "resultCount" : 19,
   "resultsSortedByScore" : [ {
-    "scorePercentage" : "100%",
-    "scoreString" : "3/3 (100.0%)",
     "score" : 100.0,
+    "scoreString" : "3/3 (100.0%)",
+    "scorePercentage" : "100%",
+    "playerName" : "k",
+    "totalQuestions" : 3,
+    "correctQuestions" : 3,
+    "date" : "2025-10-27T13:17:44"
+  }, {
+    "score" : 100.0,
+    "scoreString" : "3/3 (100.0%)",
+    "scorePercentage" : "100%",
     "playerName" : "poppy",
     "totalQuestions" : 3,
     "correctQuestions" : 3,
     "date" : "2025-10-27T12:49:29"
   }, {
-    "scorePercentage" : "100%",
-    "scoreString" : "3/3 (100.0%)",
     "score" : 100.0,
+    "scoreString" : "3/3 (100.0%)",
+    "scorePercentage" : "100%",
     "playerName" : "LOL",
     "totalQuestions" : 3,
     "correctQuestions" : 3,
     "date" : "2025-10-27T12:40:32"
   }, {
-    "scorePercentage" : "100%",
-    "scoreString" : "3/3 (100.0%)",
     "score" : 100.0,
+    "scoreString" : "3/3 (100.0%)",
+    "scorePercentage" : "100%",
     "playerName" : "HI",
     "totalQuestions" : 3,
     "correctQuestions" : 3,
     "date" : "2025-10-27T12:34:06"
   }, {
-    "scorePercentage" : "100%",
-    "scoreString" : "3/3 (100.0%)",
     "score" : 100.0,
+    "scoreString" : "3/3 (100.0%)",
+    "scorePercentage" : "100%",
     "playerName" : "HI",
     "totalQuestions" : 3,
     "correctQuestions" : 3,
     "date" : "2025-10-27T12:33:52"
   }, {
-    "scorePercentage" : "100%",
-    "scoreString" : "3/3 (100.0%)",
     "score" : 100.0,
+    "scoreString" : "3/3 (100.0%)",
+    "scorePercentage" : "100%",
     "playerName" : "K",
     "totalQuestions" : 3,
     "correctQuestions" : 3,
     "date" : "2025-10-27T12:31:39"
   }, {
-    "scorePercentage" : "100%",
-    "scoreString" : "3/3 (100.0%)",
     "score" : 100.0,
+    "scoreString" : "3/3 (100.0%)",
+    "scorePercentage" : "100%",
     "playerName" : "LILA",
     "totalQuestions" : 3,
     "correctQuestions" : 3,
     "date" : "2025-10-27T12:27:44"
   }, {
-    "scorePercentage" : "100%",
-    "scoreString" : "3/3 (100.0%)",
     "score" : 100.0,
+    "scoreString" : "3/3 (100.0%)",
+    "scorePercentage" : "100%",
     "playerName" : "MOOSA",
     "totalQuestions" : 3,
     "correctQuestions" : 3,
     "date" : "2025-10-27T12:23:07"
   }, {
-    "scorePercentage" : "100%",
-    "scoreString" : "3/3 (100.0%)",
     "score" : 100.0,
+    "scoreString" : "3/3 (100.0%)",
+    "scorePercentage" : "100%",
     "playerName" : "kian",
     "totalQuestions" : 3,
     "correctQuestions" : 3,
     "date" : "2025-09-29T15:55:58"
   }, {
-    "scorePercentage" : "100%",
-    "scoreString" : "3/3 (100.0%)",
     "score" : 100.0,
+    "scoreString" : "3/3 (100.0%)",
+    "scorePercentage" : "100%",
     "playerName" : "kian",
     "totalQuestions" : 3,
     "correctQuestions" : 3,
     "date" : "2025-09-25T10:04:19"
   }, {
-    "scorePercentage" : "100%",
-    "scoreString" : "3/3 (100.0%)",
     "score" : 100.0,
+    "scoreString" : "3/3 (100.0%)",
+    "scorePercentage" : "100%",
     "playerName" : "kian",
     "totalQuestions" : 3,
     "correctQuestions" : 3,
     "date" : "2025-09-25T10:02:02"
   }, {
-    "scorePercentage" : "67%",
-    "scoreString" : "2/3 (66.7%)",
     "score" : 66.66666666666666,
+    "scoreString" : "2/3 (66.7%)",
+    "scorePercentage" : "67%",
     "playerName" : "normal",
     "totalQuestions" : 3,
     "correctQuestions" : 2,
     "date" : "2025-10-27T13:02:21"
   }, {
-    "scorePercentage" : "67%",
-    "scoreString" : "2/3 (66.7%)",
     "score" : 66.66666666666666,
+    "scoreString" : "2/3 (66.7%)",
+    "scorePercentage" : "67%",
     "playerName" : "BOBA",
     "totalQuestions" : 3,
     "correctQuestions" : 2,
     "date" : "2025-10-27T12:23:28"
   }, {
-    "scorePercentage" : "67%",
-    "scoreString" : "2/3 (66.7%)",
     "score" : 66.66666666666666,
+    "scoreString" : "2/3 (66.7%)",
+    "scorePercentage" : "67%",
     "playerName" : "kian",
     "totalQuestions" : 3,
     "correctQuestions" : 2,
     "date" : "2025-10-06T16:45:37"
   }, {
-    "scorePercentage" : "33%",
-    "scoreString" : "1/3 (33.3%)",
     "score" : 33.33333333333333,
+    "scoreString" : "1/3 (33.3%)",
+    "scorePercentage" : "33%",
     "playerName" : "K",
     "totalQuestions" : 3,
     "correctQuestions" : 1,
     "date" : "2025-10-27T12:35:12"
   }, {
-    "scorePercentage" : "33%",
-    "scoreString" : "1/3 (33.3%)",
     "score" : 33.33333333333333,
+    "scoreString" : "1/3 (33.3%)",
+    "scorePercentage" : "33%",
     "playerName" : "kian",
     "totalQuestions" : 3,
     "correctQuestions" : 1,
     "date" : "2025-10-06T15:29:41"
   }, {
-    "scorePercentage" : "33%",
-    "scoreString" : "1/3 (33.3%)",
     "score" : 33.33333333333333,
+    "scoreString" : "1/3 (33.3%)",
+    "scorePercentage" : "33%",
     "playerName" : "niger boy",
     "totalQuestions" : 3,
     "correctQuestions" : 1,
     "date" : "2025-09-25T10:38:48"
   }, {
-    "scorePercentage" : "0%",
-    "scoreString" : "0/3 (0.0%)",
     "score" : 0.0,
+    "scoreString" : "0/3 (0.0%)",
+    "scorePercentage" : "0%",
     "playerName" : "K",
     "totalQuestions" : 3,
     "correctQuestions" : 0,
     "date" : "2025-10-27T12:25:15"
   }, {
-    "scorePercentage" : "0%",
-    "scoreString" : "0/3 (0.0%)",
     "score" : 0.0,
+    "scoreString" : "0/3 (0.0%)",
+    "scorePercentage" : "0%",
     "playerName" : "NOTHING",
     "totalQuestions" : 3,
     "correctQuestions" : 0,
     "date" : "2025-10-27T12:24:15"
   }, {
-    "scorePercentage" : "0%",
-    "scoreString" : "0/3 (0.0%)",
     "score" : 0.0,
+    "scoreString" : "0/3 (0.0%)",
+    "scorePercentage" : "0%",
     "playerName" : "NOTHING",
     "totalQuestions" : 3,
     "correctQuestions" : 0,
     "date" : "2025-10-27T12:24:03"
   } ],
+  "resultCount" : 20,
   "quizId" : "javabasicsquiz",
   "name" : "Java Basics Quiz",
   "results" : [ {
-    "scorePercentage" : "100%",
-    "scoreString" : "3/3 (100.0%)",
     "score" : 100.0,
+    "scoreString" : "3/3 (100.0%)",
+    "scorePercentage" : "100%",
     "playerName" : "kian",
     "totalQuestions" : 3,
     "correctQuestions" : 3,
     "date" : "2025-09-25T10:02:02"
   }, {
-    "scorePercentage" : "100%",
-    "scoreString" : "3/3 (100.0%)",
     "score" : 100.0,
+    "scoreString" : "3/3 (100.0%)",
+    "scorePercentage" : "100%",
     "playerName" : "kian",
     "totalQuestions" : 3,
     "correctQuestions" : 3,
     "date" : "2025-09-25T10:04:19"
   }, {
-    "scorePercentage" : "33%",
-    "scoreString" : "1/3 (33.3%)",
     "score" : 33.33333333333333,
+    "scoreString" : "1/3 (33.3%)",
+    "scorePercentage" : "33%",
     "playerName" : "niger boy",
     "totalQuestions" : 3,
     "correctQuestions" : 1,
     "date" : "2025-09-25T10:38:48"
   }, {
-    "scorePercentage" : "100%",
-    "scoreString" : "3/3 (100.0%)",
     "score" : 100.0,
+    "scoreString" : "3/3 (100.0%)",
+    "scorePercentage" : "100%",
     "playerName" : "kian",
     "totalQuestions" : 3,
     "correctQuestions" : 3,
     "date" : "2025-09-29T15:55:58"
   }, {
-    "scorePercentage" : "33%",
-    "scoreString" : "1/3 (33.3%)",
     "score" : 33.33333333333333,
+    "scoreString" : "1/3 (33.3%)",
+    "scorePercentage" : "33%",
     "playerName" : "kian",
     "totalQuestions" : 3,
     "correctQuestions" : 1,
     "date" : "2025-10-06T15:29:41"
   }, {
-    "scorePercentage" : "67%",
-    "scoreString" : "2/3 (66.7%)",
     "score" : 66.66666666666666,
+    "scoreString" : "2/3 (66.7%)",
+    "scorePercentage" : "67%",
     "playerName" : "kian",
     "totalQuestions" : 3,
     "correctQuestions" : 2,
     "date" : "2025-10-06T16:45:37"
   }, {
-    "scorePercentage" : "100%",
-    "scoreString" : "3/3 (100.0%)",
     "score" : 100.0,
+    "scoreString" : "3/3 (100.0%)",
+    "scorePercentage" : "100%",
     "playerName" : "MOOSA",
     "totalQuestions" : 3,
     "correctQuestions" : 3,
     "date" : "2025-10-27T12:23:07"
   }, {
-    "scorePercentage" : "67%",
-    "scoreString" : "2/3 (66.7%)",
     "score" : 66.66666666666666,
+    "scoreString" : "2/3 (66.7%)",
+    "scorePercentage" : "67%",
     "playerName" : "BOBA",
     "totalQuestions" : 3,
     "correctQuestions" : 2,
     "date" : "2025-10-27T12:23:28"
   }, {
-    "scorePercentage" : "0%",
-    "scoreString" : "0/3 (0.0%)",
     "score" : 0.0,
+    "scoreString" : "0/3 (0.0%)",
+    "scorePercentage" : "0%",
     "playerName" : "NOTHING",
     "totalQuestions" : 3,
     "correctQuestions" : 0,
     "date" : "2025-10-27T12:24:03"
   }, {
-    "scorePercentage" : "0%",
-    "scoreString" : "0/3 (0.0%)",
     "score" : 0.0,
+    "scoreString" : "0/3 (0.0%)",
+    "scorePercentage" : "0%",
     "playerName" : "NOTHING",
     "totalQuestions" : 3,
     "correctQuestions" : 0,
     "date" : "2025-10-27T12:24:15"
   }, {
-    "scorePercentage" : "0%",
-    "scoreString" : "0/3 (0.0%)",
     "score" : 0.0,
+    "scoreString" : "0/3 (0.0%)",
+    "scorePercentage" : "0%",
     "playerName" : "K",
     "totalQuestions" : 3,
     "correctQuestions" : 0,
     "date" : "2025-10-27T12:25:15"
   }, {
-    "scorePercentage" : "100%",
-    "scoreString" : "3/3 (100.0%)",
     "score" : 100.0,
+    "scoreString" : "3/3 (100.0%)",
+    "scorePercentage" : "100%",
     "playerName" : "LILA",
     "totalQuestions" : 3,
     "correctQuestions" : 3,
     "date" : "2025-10-27T12:27:44"
   }, {
-    "scorePercentage" : "100%",
-    "scoreString" : "3/3 (100.0%)",
     "score" : 100.0,
+    "scoreString" : "3/3 (100.0%)",
+    "scorePercentage" : "100%",
     "playerName" : "K",
     "totalQuestions" : 3,
     "correctQuestions" : 3,
     "date" : "2025-10-27T12:31:39"
   }, {
-    "scorePercentage" : "100%",
-    "scoreString" : "3/3 (100.0%)",
     "score" : 100.0,
+    "scoreString" : "3/3 (100.0%)",
+    "scorePercentage" : "100%",
     "playerName" : "HI",
     "totalQuestions" : 3,
     "correctQuestions" : 3,
     "date" : "2025-10-27T12:33:52"
   }, {
-    "scorePercentage" : "100%",
-    "scoreString" : "3/3 (100.0%)",
     "score" : 100.0,
+    "scoreString" : "3/3 (100.0%)",
+    "scorePercentage" : "100%",
     "playerName" : "HI",
     "totalQuestions" : 3,
     "correctQuestions" : 3,
     "date" : "2025-10-27T12:34:06"
   }, {
-    "scorePercentage" : "33%",
-    "scoreString" : "1/3 (33.3%)",
     "score" : 33.33333333333333,
+    "scoreString" : "1/3 (33.3%)",
+    "scorePercentage" : "33%",
     "playerName" : "K",
     "totalQuestions" : 3,
     "correctQuestions" : 1,
     "date" : "2025-10-27T12:35:12"
   }, {
-    "scorePercentage" : "100%",
-    "scoreString" : "3/3 (100.0%)",
     "score" : 100.0,
+    "scoreString" : "3/3 (100.0%)",
+    "scorePercentage" : "100%",
     "playerName" : "LOL",
     "totalQuestions" : 3,
     "correctQuestions" : 3,
     "date" : "2025-10-27T12:40:32"
   }, {
-    "scorePercentage" : "100%",
-    "scoreString" : "3/3 (100.0%)",
     "score" : 100.0,
+    "scoreString" : "3/3 (100.0%)",
+    "scorePercentage" : "100%",
     "playerName" : "poppy",
     "totalQuestions" : 3,
     "correctQuestions" : 3,
     "date" : "2025-10-27T12:49:29"
   }, {
-    "scorePercentage" : "67%",
-    "scoreString" : "2/3 (66.7%)",
     "score" : 66.66666666666666,
+    "scoreString" : "2/3 (66.7%)",
+    "scorePercentage" : "67%",
     "playerName" : "normal",
     "totalQuestions" : 3,
     "correctQuestions" : 2,
     "date" : "2025-10-27T13:02:21"
+  }, {
+    "score" : 100.0,
+    "scoreString" : "3/3 (100.0%)",
+    "scorePercentage" : "100%",
+    "playerName" : "k",
+    "totalQuestions" : 3,
+    "correctQuestions" : 3,
+    "date" : "2025-10-27T13:17:44"
   } ],
   "numericId" : "231748"
 }
