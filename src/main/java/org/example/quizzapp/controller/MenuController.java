@@ -25,7 +25,10 @@ public class MenuController {
     private Button loadQuizButton;
     
     @FXML
-    private Button startQuizButton;
+    private Button startNormalModeButton;
+    
+    @FXML
+    private Button startPracticeModeButton;
     
     @FXML
     private Button viewResultsButton;
@@ -41,8 +44,24 @@ public class MenuController {
      */
     @FXML
     private void initialize() {
-        startQuizButton.setDisable(true);
+        disableStartButtons();
         quizInfoLabel.setText("No quiz loaded");
+    }
+    
+    /**
+     * Disables both start quiz buttons.
+     */
+    private void disableStartButtons() {
+        startNormalModeButton.setDisable(true);
+        startPracticeModeButton.setDisable(true);
+    }
+    
+    /**
+     * Enables both start quiz buttons.
+     */
+    private void enableStartButtons() {
+        startNormalModeButton.setDisable(false);
+        startPracticeModeButton.setDisable(false);
     }
     
     /**
@@ -63,7 +82,7 @@ public class MenuController {
                 loadedQuiz = quizService.loadQuiz(selectedFile);
                 
                 // Update UI
-                startQuizButton.setDisable(false);
+                enableStartButtons();
                 quizInfoLabel.setText(String.format("Loaded: %s (%d questions)", 
                     loadedQuiz.getTitle(), loadedQuiz.getTotalQuestions()));
                 
@@ -82,14 +101,37 @@ public class MenuController {
     }
     
     /**
-     * Handles starting the quiz.
+     * Handles starting the quiz in normal mode with timer and score saving.
      */
     @FXML
-    private void handleStartQuiz() {
+    private void handleStartNormalMode() {
+        startQuiz(false);
+    }
+    
+    /**
+     * Handles starting the quiz in practice mode without timer and score saving.
+     */
+    @FXML
+    private void handleStartPracticeMode() {
+        startQuiz(true);
+    }
+    
+    /**
+     * Starts the quiz with the specified mode.
+     * 
+     * @param practiceMode true for practice mode, false for normal mode
+     */
+    private void startQuiz(boolean practiceMode) {
         if (loadedQuiz != null) {
             try {
-                // Pass the quiz to GameManager and switch to game view
-                org.example.quizzapp.service.GameManager.getInstance().loadQuiz(loadedQuiz);
+                org.example.quizzapp.service.GameManager gameManager = 
+                    org.example.quizzapp.service.GameManager.getInstance();
+                
+                // Load quiz and set mode
+                gameManager.loadQuiz(loadedQuiz);
+                gameManager.setPracticeMode(practiceMode);
+                
+                // Switch to game view
                 QuizApplication.switchScene("view/game-view.fxml", "Quiz Application - Game");
             } catch (IOException e) {
                 showAlert(Alert.AlertType.ERROR, "Error", 

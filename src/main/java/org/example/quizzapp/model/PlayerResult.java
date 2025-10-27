@@ -73,6 +73,13 @@ public class PlayerResult {
     }
     
     /**
+     * Gets the score as a percentage string without decimals for leaderboard display.
+     */
+    public String getScorePercentage() {
+        return String.format("%d%%", (int) Math.round(getScore()));
+    }
+    
+    /**
      * Gets the score as a formatted string.
      * 
      * @return Score string in format "X/Y (Z%)"

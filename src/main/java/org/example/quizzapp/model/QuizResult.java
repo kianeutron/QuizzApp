@@ -21,6 +21,9 @@ public class QuizResult {
     @JsonProperty("results")
     private List<PlayerResult> results;
     
+    @JsonProperty("numericId")
+    private String numericId;
+    
     /**
      * Default constructor for JSON deserialization.
      */
@@ -38,6 +41,23 @@ public class QuizResult {
         this();
         this.quizId = quizId;
         this.name = name;
+        this.numericId = generateNumericId(quizId);
+    }
+    
+    /**
+     * Generates a numeric ID from the quiz ID using hash code.
+     * 
+     * @param quizId The quiz ID
+     * @return A positive numeric ID
+     */
+    private static String generateNumericId(String quizId) {
+        if (quizId == null || quizId.isEmpty()) {
+            return "0";
+        }
+        // Use absolute value of hash code to ensure positive number
+        int hashCode = Math.abs(quizId.hashCode());
+        // Convert to 6-digit padded number for consistency
+        return String.format("%06d", hashCode % 1000000);
     }
     
     /**
@@ -110,6 +130,17 @@ public class QuizResult {
     
     public void setResults(List<PlayerResult> results) {
         this.results = results != null ? new ArrayList<>(results) : new ArrayList<>();
+    }
+    
+    public String getNumericId() {
+        if (numericId == null) {
+            numericId = generateNumericId(quizId);
+        }
+        return numericId;
+    }
+    
+    public void setNumericId(String numericId) {
+        this.numericId = numericId;
     }
     
     @Override

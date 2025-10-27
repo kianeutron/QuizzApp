@@ -26,6 +26,7 @@ public class GameManager {
     private final IntegerProperty score = new SimpleIntegerProperty(0);
     private final List<Object> playerAnswers = new ArrayList<>();
     private final List<Boolean> answerCorrectness = new ArrayList<>();
+    private boolean isPracticeMode = false;
     
     /**
      * Private constructor for singleton pattern.
@@ -43,6 +44,24 @@ public class GameManager {
             instance = new GameManager();
         }
         return instance;
+    }
+    
+    /**
+     * Sets the practice mode flag.
+     * 
+     * @param practiceMode true for practice mode, false for normal mode
+     */
+    public void setPracticeMode(boolean practiceMode) {
+        this.isPracticeMode = practiceMode;
+    }
+    
+    /**
+     * Checks if the current game is in practice mode.
+     * 
+     * @return true if in practice mode, false otherwise
+     */
+    public boolean isPracticeMode() {
+        return isPracticeMode;
     }
     
     /**
@@ -64,6 +83,7 @@ public class GameManager {
         playerAnswers.clear();
         answerCorrectness.clear();
         playerName.set("");
+        isPracticeMode = false;
     }
     
     /**

@@ -134,8 +134,12 @@ public class GameController {
             createBooleanQuestion((BooleanQuestion) currentQuestion);
         }
         
-        // Start timer
-        startTimer();
+        // Start timer only if not in practice mode
+        if (!gameManager.isPracticeMode()) {
+            startTimer();
+        } else {
+            hideTimer();
+        }
     }
     
     /**
@@ -219,6 +223,16 @@ public class GameController {
     }
     
     /**
+     * Hides the timer UI for practice mode.
+     */
+    private void hideTimer() {
+        Platform.runLater(() -> {
+            timerProgressBar.setProgress(0);
+            timerLabel.setText("Practice Mode - No Timer");
+        });
+    }
+    
+    /**
      * Handles time running out.
      */
     private void handleTimeUp() {
@@ -233,7 +247,9 @@ public class GameController {
     @FXML
     private void handleSubmitAnswer() {
         if (currentAnswer != null) {
-            timer.stop();
+            if (timer != null) {
+                timer.stop();
+            }
             gameManager.submitAnswer(currentAnswer);
             nextQuestion();
         }

@@ -5,13 +5,17 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.FileChooser;
 import org.example.quizzapp.QuizApplication;
 import org.example.quizzapp.model.PlayerResult;
 import org.example.quizzapp.model.QuizResult;
+import org.example.quizzapp.service.CsvExporter;
 import org.example.quizzapp.service.GameManager;
 import org.example.quizzapp.service.QuizService;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.time.format.DateTimeFormatter;
 
 /**
@@ -42,6 +46,9 @@ public class ResultsController {
     private TableColumn<PlayerResult, String> dateColumn;
     
     @FXML
+    private Button exportButton;
+    
+    @FXML
     private Button backToMenuButton;
     
     @FXML
@@ -49,6 +56,8 @@ public class ResultsController {
     
     private final GameManager gameManager = GameManager.getInstance();
     private final QuizService quizService = new QuizService();
+    private final CsvExporter csvExporter = new CsvExporter();
+    private QuizResult currentQuizResult;
     
     /**
      * Initializes the results screen.
@@ -80,11 +89,13 @@ public class ResultsController {
     private void setupTable() {
         // Set up table columns with proper cell value factories
         playerNameColumn.setCellValueFactory(new PropertyValueFactory<>("playerName"));
-        scoreColumn.setCellValueFactory(new PropertyValueFactory<>("scoreString"));
+        // Show integer percentage without decimals per exam spec
+        scoreColumn.setCellValueFactory(new PropertyValueFactory<>("scorePercentage"));
+        // Show date only (yyyy-MM-dd) per example
         dateColumn.setCellValueFactory(cellData -> {
             PlayerResult result = cellData.getValue();
             if (result.getDate() != null) {
-                String formattedDate = result.getDate().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
+                String formattedDate = result.getDate().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
                 return new javafx.beans.property.SimpleStringProperty(formattedDate);
             }
             return new javafx.beans.property.SimpleStringProperty("N/A");
@@ -102,21 +113,31 @@ public class ResultsController {
                 return;
             }
         
-        // Calculate and save current player's result
+        // Calculate current player's result
         PlayerResult currentResult = gameManager.calculateFinalScore();
         
-        try {
-            quizService.saveResult(gameManager.getCurrentQuiz().getTitle(), currentResult);
-        } catch (IOException e) {
-            System.err.println("Error saving result: " + e.getMessage());
+        // Save result only if not in practice mode
+        if (!gameManager.isPracticeMode()) {
+            try {
+                quizService.saveResult(gameManager.getCurrentQuiz().getTitle(), currentResult);
+            } catch (IOException e) {
+                System.err.println("Error saving result: " + e.getMessage());
+            }
         }
         
-        // Display completion message
-        String completionMessage = generateCompletionMessage(currentResult);
+        // Set quiz name with mode indicator
+        String quizTitle = gameManager.getCurrentQuiz().getTitle();
+        String modeIndicator = gameManager.isPracticeMode() ? " (Practice Mode)" : "";
+        titleLabel.setText(String.format("Quiz name: %s%s", quizTitle, modeIndicator));
+
+        // Display completion message: prefer completedHtml if provided
+        String completionMessage = (gameManager.getCurrentQuiz().getCompletedHtml() != null && !gameManager.getCurrentQuiz().getCompletedHtml().isBlank())
+                ? processCompletionMessage(gameManager.getCurrentQuiz().getCompletedHtml(), currentResult)
+                : generateCompletionMessage(currentResult);
         completionMessageLabel.setText(completionMessage);
         
-        // Display current player's score
-        playerScoreLabel.setText(String.format("Your Score: %s", currentResult.getScoreString()));
+        // Display current player's score as integer percentage without decimals
+        playerScoreLabel.setText(String.format("Your score: %s", currentResult.getScorePercentage()));
         
         // Load and display all results
         loadHighScores();
@@ -126,6 +147,19 @@ public class ResultsController {
             completionMessageLabel.setText("Error loading results");
             playerScoreLabel.setText("Please try again");
         }
+    }
+    
+    /**
+     * Processes the completion message by replacing template variables and removing HTML tags.
+     */
+    private String processCompletionMessage(String htmlMessage, PlayerResult result) {
+        // Replace template variables with actual values
+        String processed = htmlMessage
+                .replace("{correctAnswers}", String.valueOf(result.getCorrectQuestions()))
+                .replace("{questionCount}", String.valueOf(result.getTotalQuestions()));
+        
+        // Remove HTML tags
+        return processed.replaceAll("<[^>]*>", "").trim();
     }
     
     /**
@@ -156,12 +190,12 @@ public class ResultsController {
             String quizTitle = gameManager.getCurrentQuiz().getTitle();
             System.out.println("Loading results for quiz: " + quizTitle);
 
-            QuizResult quizResult = quizService.loadResults(quizTitle);
-            System.out.println("Loaded quiz result: " + quizResult);
-            System.out.println("Number of results: " + quizResult.getResults().size());
+            currentQuizResult = quizService.loadResults(quizTitle);
+            System.out.println("Loaded quiz result: " + currentQuizResult);
+            System.out.println("Number of results: " + currentQuizResult.getResults().size());
 
             ObservableList<PlayerResult> results = FXCollections.observableArrayList(
-                quizResult.getResultsSortedByScore()
+                currentQuizResult.getResultsSortedByScore()
             );
             System.out.println("Setting " + results.size() + " results to table");
 
@@ -172,6 +206,10 @@ public class ResultsController {
 
             resultsTable.setItems(results);
             System.out.println("Table items set. Table has " + resultsTable.getItems().size() + " items");
+            
+            if (gameManager.isPracticeMode()) {
+                System.out.println("Practice mode: Results are not saved to leaderboard");
+            }
         } catch (Exception e) {
             System.err.println("Error loading high scores: " + e.getMessage());
             e.printStackTrace();
@@ -211,6 +249,74 @@ public class ResultsController {
         } else {
             handleBackToMenu();
         }
+    }
+    
+    /**
+     * Handles exporting leaderboard to CSV.
+     */
+    @FXML
+    private void handleExport() {
+        if (gameManager.isPracticeMode()) {
+            showAlert(Alert.AlertType.WARNING, "Practice Mode", 
+                "Cannot export in practice mode", "Results are not saved in practice mode, so there is nothing to export.");
+            return;
+        }
+        
+        if (currentQuizResult == null || currentQuizResult.getResults().isEmpty()) {
+            showAlert(Alert.AlertType.WARNING, "No Data", 
+                "No results to export", "There are no quiz results to export.");
+            return;
+        }
+        
+        try {
+            String fileName = generateDefaultFileName();
+            File file = showExportFileDialog(fileName);
+            
+            if (file != null) {
+                csvExporter.exportToCsv(currentQuizResult, file.toPath());
+                showAlert(Alert.AlertType.INFORMATION, "Success", 
+                    "Export successful", "Leaderboard exported to: " + file.getAbsolutePath());
+            }
+        } catch (IllegalArgumentException e) {
+            showAlert(Alert.AlertType.ERROR, "Invalid File", 
+                "Invalid file selection", e.getMessage());
+        } catch (IOException e) {
+            showAlert(Alert.AlertType.ERROR, "Export Error", 
+                "Failed to export leaderboard", "Error: " + e.getMessage());
+        }
+    }
+    
+    /**
+     * Shows file chooser dialog for CSV export.
+     *
+     * @param defaultFileName Default file name for the export
+     * @return Selected file or null if cancelled
+     */
+    private File showExportFileDialog(String defaultFileName) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Export Leaderboard to CSV");
+        fileChooser.setInitialFileName(defaultFileName);
+        
+        FileChooser.ExtensionFilter csvFilter = new FileChooser.ExtensionFilter("CSV Files (*.csv)", "*.csv");
+        fileChooser.getExtensionFilters().add(csvFilter);
+        fileChooser.setSelectedExtensionFilter(csvFilter);
+        
+        return fileChooser.showSaveDialog(exportButton.getScene().getWindow());
+    }
+    
+    /**
+     * Generates a default file name for CSV export.
+     *
+     * @return Default file name with quiz title and current date
+     */
+    private String generateDefaultFileName() {
+        String quizName = currentQuizResult.getName()
+                                          .toLowerCase()
+                                          .replaceAll("[^a-z0-9]", "-")
+                                          .replaceAll("-+", "-")
+                                          .replaceAll("^-|-$", "");
+        String timestamp = java.time.LocalDate.now().toString();
+        return quizName + "-" + timestamp + ".csv";
     }
     
     /**

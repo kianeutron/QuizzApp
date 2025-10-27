@@ -10,6 +10,21 @@ A JavaFX-based quiz application developed as part of the Java Fundamentals cours
 - **Score Tracking**: Real-time score updates using JavaFX property binding
 - **Results Management**: Save and view high scores for each quiz
 - **JSON-based Quiz Format**: Load quizzes from JSON files with flexible question configuration
+- **Leaderboard**: View all previous quiz results sorted by score in descending order with:
+  - Player names
+  - Score as a percentage (without decimals)
+  - Completion dates
+- **CSV Export**: Export leaderboard data to CSV format with the following structure:
+  - `quizId;quizName;playerName;totalQuestions;correctQuestions;date`
+  - Configurable export path and filename with .csv extension
+- **Practice Mode**: Alternative quiz mode where:
+  - Timer does not run (unlimited time per question)
+  - Scores are not saved to the leaderboard
+  - Perfect for learning and practice without pressure
+- **Responsive UI**: Works seamlessly on any screen size:
+  - Scrollable pages when not in fullscreen
+  - Adaptive layout for different window sizes
+  - Text wrapping for smaller displays
 
 ## Design Patterns Implemented
 
@@ -66,12 +81,43 @@ mvn test
 
 ## Usage
 
+### Starting a Quiz
+
 1. **Start the Application**: Launch the application to see the welcome screen
 2. **Load a Quiz**: Click "Load Quiz" and select a JSON quiz file (use `sample-quiz.json` for testing)
-3. **Start Playing**: Click "Start Quiz" to begin
+3. **Choose Game Mode**:
+   - **Normal Mode**: Timed quiz with score saved to leaderboard
+   - **Practice Mode**: Untimed quiz without leaderboard tracking
 4. **Enter Your Name**: Provide your name before starting the quiz
-5. **Answer Questions**: Select answers within the time limit for each question
-6. **View Results**: See your score and compare with previous attempts
+5. **Answer Questions**: Select answers and submit within the time limit (Normal mode only)
+6. **View Results**: See your score and the leaderboard
+
+### Viewing Results and Leaderboard
+
+- After completing a quiz, the results screen displays:
+  - Your score as a percentage (without decimals)
+  - A completion message based on your performance
+  - **Leaderboard**: All previous attempts sorted by score in descending order
+    - Shows player name, score percentage, and completion date
+  - Action buttons:
+    - **Export to CSV**: Download leaderboard data in CSV format
+    - **Play Again**: Take the quiz again
+    - **Back to Menu**: Return to the main menu
+
+### Exporting Leaderboard
+
+1. Click the **"Export to CSV"** button on the results screen
+2. Choose the location and filename (defaults to `.csv` extension)
+3. The file will be created with the following format:
+   ```
+   quizId;quizName;playerName;totalQuestions;correctQuestions;date
+   ```
+4. Example output:
+   ```
+   javabasicsquiz;Java Basics Quiz;Alice;3;3;2025-10-27T12:49:29
+   javabasicsquiz;Java Basics Quiz;Bob;3;2;2025-10-27T12:40:32
+   javabasicsquiz;Java Basics Quiz;Charlie;3;1;2025-10-27T12:34:06
+   ```
 
 ## Quiz JSON Format
 
